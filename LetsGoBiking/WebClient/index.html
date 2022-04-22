@@ -1,10 +1,57 @@
-<!DOCTYPE html>
+<!--Start a basic html page-->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!--Title of the page-->
+    <title> Let's Go Biking </title>
+    <!--Meta data for the page-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Link to the stylesheet style.css-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css"
+          type="text/css">
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
 </head>
+<!--Start the body of the page-->
 <body>
+<main>
+    <div class='container'>
+        <div class="formulaire">
+            <div class = "box1" >
+                <div class="page_title">
+                    <h1>Let's Go Biking</h1>
+                </div>
+                <form>
+                    <div class="inputbox">
+                        <input type="text" required="required">
+                        <span>Location</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" required="required">
+                        <span>Destination</span>
+                    </div>
+                    <div class="inputbox">
+                        <input type="button" value="submit">
+                    </div>
+                </form>
+                <div class="instructions">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur
+                        tempor, nisl nunc ultrices eros, eu porttitor nisl nunc eget purus.
+                    </p>
+                </div>
+            </div>
+            <div class="box2" id="map"></div>
+        </div>
+    </div>
 
+</main>
+<script type="text/javascript" src="main.js"></script>
+
+<!--Start the footer of the page-->
+<footer>
+    <p>Copyright &copy; 2022</p>
+</footer>
 </body>
 </html>
