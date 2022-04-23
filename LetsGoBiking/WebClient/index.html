@@ -1,4 +1,5 @@
 <!--Start a basic html page-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!--Title of the page-->
@@ -24,15 +25,15 @@
                 </div>
                 <form>
                     <div class="inputbox">
-                        <input type="text" required="required">
+                        <input id="location" type="text" required="required" >
                         <span>Location</span>
                     </div>
                     <div class="inputbox">
-                        <input type="text" required="required">
+                        <input id="destination" type="text" required="required">
                         <span>Destination</span>
                     </div>
                     <div class="inputbox">
-                        <input type="button" value="submit">
+                        <input type="button" value="submit" onclick="savePath();">
                     </div>
                 </form>
                 <div class="instructions">
