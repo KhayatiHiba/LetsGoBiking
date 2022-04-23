@@ -22,7 +22,7 @@ function CenterMap(longitude, latitude) {
     map.getView().setZoom(10);
 }
 
-function savePath() {
+function computePath() {
     console.log('Saving the information');
     //  get the location
     var location = document.getElementById('location').value;
@@ -35,7 +35,6 @@ function savePath() {
     CenterMap(12.9, 55.7);
 
     // get the router server targetUrl
-    //TODO : change the targetUrl to the real one
     var targetUrl = "http://localhost:8733/Design_Time_Addresses/RoutingService/Service1/itinerary?location="
         + location + "&destination=" + destination;
     var requestType = "GET";
@@ -46,9 +45,13 @@ function savePath() {
     // The header set below limits the elements we are OK to retrieve from the server.
     caller.setRequestHeader("Accept", 'application/json; charset=utf-8');
     // onload shall contain the function that will be called when the call is finished.
-    caller.onload = computeTrip;
+    caller.onload = showTripPath;
     caller.send();
 }
-function computeTrip() {
+
+/**
+ * Drawing the path on the map.
+ */
+function showTripPath() {
     console.log('Computing the trip');
 }
