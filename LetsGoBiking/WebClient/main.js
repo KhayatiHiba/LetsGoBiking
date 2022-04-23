@@ -36,7 +36,7 @@ function savePath() {
 
     // get the router server targetUrl
     //TODO : change the targetUrl to the real one
-    var targetUrl = "http://localhost:8733/WcfServiceLibrary/Biking/rest/getCoordinates?location="
+    var targetUrl = "http://localhost:8733/Design_Time_Addresses/RoutingService/Service1/itinerary?location="
         + location + "&destination=" + destination;
     var requestType = "GET";
 
