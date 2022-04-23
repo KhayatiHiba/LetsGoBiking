@@ -44,7 +44,7 @@ function savePath() {
     caller.open(requestType, targetUrl, true); // open the connection to the server with the targetUrl and the requestType (GET) and asynchronous (true)
 
     // The header set below limits the elements we are OK to retrieve from the server.
-    caller.setRequestHeader("Accept", "application/json");
+    caller.setRequestHeader("Accept", 'application/json; charset=utf-8');
     // onload shall contain the function that will be called when the call is finished.
     caller.onload = computeTrip;
     caller.send();
