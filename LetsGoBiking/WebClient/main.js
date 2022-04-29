@@ -21,14 +21,7 @@ function CenterMap(longitude, latitude) {
    // var center = ol.proj.fromLonLat([(longitude + longitude2) / 2, (latitude + latitude2) / 2]);
     console.log("Longitude: " + longitude + " Lat: " + latitude);
     map.getView().setCenter(ol.proj.transform([longitude,latitude], 'EPSG:4326', 'EPSG:3857'));
-    //map.getView().setCenter(ol.proj.transform([(longitude + longitude2) / 2, (latitude + latitude2) / 2], 'EPSG:4326', 'EPSG:3857'));
     map.getView().setZoom(15);
-    // See if the two points are visible on the map.
-    //var extent = map.getView().calculateExtent(map.getSize());
-    // If the two points are not  visible, decrease the zoom level until they are.
-    //while (!ol.extent.containsCoordinate(extent, [longitude, latitude]) || !ol.extent.containsCoordinate(extent, [longitude2, latitude2])) {
-    //    map.getView().setZoom(map.getView().getZoom() - 1);
-    //  extent = map.getView().calculateExtent(map.getSize());
 }
 
 function computePath() {
@@ -87,7 +80,7 @@ function showTripPath() {
         posInitialey = responseObject['routes'][0]['geometry']['coordinates'][0][1];
         
         for (let i = 0; i < responseObject['routes'].length; i++) {
-            let color = i % 2 === 0 ? '#ff6c02' : '#ffb400'
+            let color = i % 2 === 0 ? '#edae49' : '#7c616c'
             let coords = responseObject['routes'][i]['geometry']['coordinates'];
             let lineString = new ol.geom.LineString(coords);
             

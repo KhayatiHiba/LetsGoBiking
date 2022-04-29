@@ -1,13 +1,14 @@
 :root{
     --main-bg-color: #fff9f9;
-    --secondary-color: #5a8100;
-    --main-color: dodgerblue;
-    --accent-color: #ffb400;
-    --accent-color-two: #ff6c02;
+    --secondary-color: #7C616C;
+    --main-color: #EDAE49;
+    --accent-color: #D1B1CB;
+    --accent-color-two: #7C616C;
     --text-color: #000000;
 }
 html, body {
     background-color: var(--main-bg-color);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -40,9 +41,9 @@ html, body {
     top: 0;
     left: 0;
     width: 100%;
-    border: 2px solid var(--text-color);
+    border: 2px solid var(--secondary-color);
     outline: none;
-    background: none;
+    background: var(--main-bg-color);
     padding: 10px;
     border-radius: 10px;
     font-size: 1em;
@@ -72,7 +73,7 @@ html, body {
     border: #fff;
 }
 .box1 .inputbox:hover [type="button"] {
-    background: linear-gradient(45deg, greenyellow, dodgerblue);
+    background: linear-gradient(45deg, var(--main-color), var(--secondary-color));
 }
 #button {
     margin-top: -10px;
@@ -90,8 +91,9 @@ html, body {
 .page_title {
     font-size: 1.13em;
     color: var(--secondary-color);
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     margin-bottom: 20px;
+    margin-left: 25px;
     font-weight: bold;
     padding-right: 16px;
     text-align: center;
@@ -101,13 +103,14 @@ html, body {
     line-height: 28px;
     transform: translateY(300px);
     margin-left: 20px;
-    animation: slideUp 10.5s ease-in-out forwards .8s;
+    animation: slideUp 1.5s ease-in-out forwards .8s;
 }
 #instruct{
     margin-left: 20px;
     height: 185px;
     width: 100%;
     overflow: auto;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 #titleInstruct {
     font-size: 1em;
