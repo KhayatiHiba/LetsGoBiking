@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RoutingService
+namespace ServiceReference1
 {
     using System.Runtime.Serialization;
     
@@ -22,7 +22,7 @@ namespace RoutingService
         
         private string messageField;
         
-        private RoutingService.Path[] routesField;
+        private ServiceReference1.Path[] routesField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public bool hasError
@@ -51,7 +51,7 @@ namespace RoutingService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public RoutingService.Path[] routes
+        public ServiceReference1.Path[] routes
         {
             get
             {
@@ -70,12 +70,12 @@ namespace RoutingService
     public partial class Path : object
     {
         
-        private RoutingService.Geometry geometryField;
+        private ServiceReference1.Geometry geometryField;
         
-        private RoutingService.Properties propertiesField;
+        private ServiceReference1.Properties propertiesField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public RoutingService.Geometry geometry
+        public ServiceReference1.Geometry geometry
         {
             get
             {
@@ -88,7 +88,7 @@ namespace RoutingService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public RoutingService.Properties properties
+        public ServiceReference1.Properties properties
         {
             get
             {
@@ -129,12 +129,12 @@ namespace RoutingService
     public partial class Properties : object
     {
         
-        private RoutingService.Segment[] segmentsField;
+        private ServiceReference1.Segment[] segmentsField;
         
-        private RoutingService.Summary summaryField;
+        private ServiceReference1.Summary summaryField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public RoutingService.Segment[] segments
+        public ServiceReference1.Segment[] segments
         {
             get
             {
@@ -147,7 +147,7 @@ namespace RoutingService
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public RoutingService.Summary summary
+        public ServiceReference1.Summary summary
         {
             get
             {
@@ -203,10 +203,10 @@ namespace RoutingService
     public partial class Segment : object
     {
         
-        private RoutingService.Step[] stepsField;
+        private ServiceReference1.Step[] stepsField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public RoutingService.Step[] steps
+        public ServiceReference1.Step[] steps
         {
             get
             {
@@ -272,22 +272,22 @@ namespace RoutingService
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RoutingService.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1
     {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/ComputePath", ReplyAction="http://tempuri.org/IService1/ComputePathResponse")]
-        System.Threading.Tasks.Task<RoutingService.Result> ComputePathAsync(string start, string end);
+        System.Threading.Tasks.Task<ServiceReference1.Result> ComputePathAsync(string location, string destination);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    public interface IService1Channel : RoutingService.IService1, System.ServiceModel.IClientChannel
+    public interface IService1Channel : ServiceReference1.IService1, System.ServiceModel.IClientChannel
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.0.3")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<RoutingService.IService1>, RoutingService.IService1
+    public partial class Service1Client : System.ServiceModel.ClientBase<ServiceReference1.IService1>, ServiceReference1.IService1
     {
         
         /// <summary>
@@ -330,9 +330,9 @@ namespace RoutingService
         {
         }
         
-        public System.Threading.Tasks.Task<RoutingService.Result> ComputePathAsync(string start, string end)
+        public System.Threading.Tasks.Task<ServiceReference1.Result> ComputePathAsync(string location, string destination)
         {
-            return base.Channel.ComputePathAsync(start, end);
+            return base.Channel.ComputePathAsync(location, destination);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

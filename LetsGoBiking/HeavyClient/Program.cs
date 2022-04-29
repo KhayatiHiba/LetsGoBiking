@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using RoutingService;
+using ServiceReference1;
 
 namespace HeavyClient
 {
@@ -8,33 +8,34 @@ namespace HeavyClient
     {
         static async Task Main(string[] args)
         {
-            Console.WriteLine("Starting of the heavy client !");
-            Console.WriteLine("Press any key to start measures :");
-            Console.ReadLine();
-
-            Console.WriteLine("\n ------- STARTING TESTS -------");
-
 
             Stopwatch stopwatch = new();
             Service1Client client = new Service1Client();
 
-            stopwatch.Start();
-            var _ = await client.ComputePathAsync("paris", "nice");
-            stopwatch.Stop();
 
-            Console.WriteLine("Elapsed time without proxy is {0} s", (stopwatch.ElapsedMilliseconds / 1000.0).ToString("0.####"));
-
-            for (int i = 0; i < 2; i++)
+            Console.WriteLine("Starting of the heavy client !");
+            while (true)
             {
-                stopwatch.Restart();
-                _ = await client.ComputePathAsync("paris", "nice");
-                stopwatch.Stop();
-                Console.WriteLine("Elapsed time with proxy is {0} s", (stopwatch.ElapsedMilliseconds / 1000.0).ToString("0.####"));
-            }
+                Console.WriteLine("Press enter key to start. Tap exit to quit");
+                var value = Console.ReadLine();
+                if (value == "exit")
+                {
+                    break;
+                }
+                Console.WriteLine("Where are you located ?");
 
-            Console.WriteLine("\n ------- TESTS ARE OVER -------");
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadLine();
+                var location = Console.ReadLine();
+
+                Console.WriteLine("Where are you headed ?");
+
+                var destination = Console.ReadLine();
+
+                stopwatch.Restart();
+                var _ = await client.ComputePathAsync(location, destination);
+                stopwatch.Stop();
+
+                Console.WriteLine("Elapsed time is {0} s", (stopwatch.ElapsedMilliseconds / 1000.0).ToString("0.####"));
+            }
         }
     }
 }

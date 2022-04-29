@@ -24,6 +24,9 @@ namespace RoutingService
             return JsonConvert.DeserializeObject<Station[]>(await proxyClient.GetStationsAsync());
         }
 
+        /**
+         * 
+         **/
         internal static async Task<Path> GetPath(CustomGeoCoordinate coordinate, CustomGeoCoordinate stationPos,
             string meansOfTransportation)
         {
