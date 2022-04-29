@@ -32,7 +32,7 @@ html, body {
     position: relative;
     width: 300px;
     height: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 45px;
     margin-left: 15px;
 }
 .box1 .inputbox input {
@@ -74,16 +74,24 @@ html, body {
 .box1 .inputbox:hover [type="button"] {
     background: linear-gradient(45deg, greenyellow, dodgerblue);
 }
+#button {
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
 #map {
     flex: 4;
     padding: 50px 25px;
+}
+.box2 {
+    width: 700px;
+    height: 500px;
 }
 
 .page_title {
     font-size: 1.13em;
     color: var(--secondary-color);
     letter-spacing: 3px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     font-weight: bold;
     padding-right: 16px;
     text-align: center;
@@ -93,7 +101,23 @@ html, body {
     line-height: 28px;
     transform: translateY(300px);
     margin-left: 20px;
-    animation: slideUp 5.5s ease-in-out forwards .8s;
+    animation: slideUp 10.5s ease-in-out forwards .8s;
+}
+#instruct{
+    margin-left: 20px;
+    height: 185px;
+    width: 100%;
+    overflow: auto;
+}
+#titleInstruct {
+    font-size: 1em;
+    color: var(--secondary-color);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding-right: 16px;
+    text-align: center;
+    animation: slideIn .8s ease forwards .5s;
 }
 
 

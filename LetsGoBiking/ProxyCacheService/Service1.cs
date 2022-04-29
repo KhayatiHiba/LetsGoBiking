@@ -1,31 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
+﻿using System.Threading.Tasks;
 
 namespace ProxyCacheService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        public Task<string> GetStation(string stationId)
         {
-            return string.Format("You entered: {0}", value);
+            return JCDecaux.GetStationAsync(stationId);
         }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        
+        public Task<string> GetStations()
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            return JCDecaux.GetStationAsync("all");
         }
     }
 }

@@ -17,9 +17,18 @@ var map = new ol.Map({
  * @param latitude the latitude of the new center point of the map.
  */
 function CenterMap(longitude, latitude) {
+    // Calculate the center of the two points.
+   // var center = ol.proj.fromLonLat([(longitude + longitude2) / 2, (latitude + latitude2) / 2]);
     console.log("Longitude: " + longitude + " Lat: " + latitude);
-    map.getView().setCenter(ol.proj.transform([longitude, latitude], 'EPSG:4326', 'EPSG:3857'));
-    map.getView().setZoom(10);
+    map.getView().setCenter(ol.proj.transform([longitude,latitude], 'EPSG:4326', 'EPSG:3857'));
+    //map.getView().setCenter(ol.proj.transform([(longitude + longitude2) / 2, (latitude + latitude2) / 2], 'EPSG:4326', 'EPSG:3857'));
+    map.getView().setZoom(15);
+    // See if the two points are visible on the map.
+    //var extent = map.getView().calculateExtent(map.getSize());
+    // If the two points are not  visible, decrease the zoom level until they are.
+    //while (!ol.extent.containsCoordinate(extent, [longitude, latitude]) || !ol.extent.containsCoordinate(extent, [longitude2, latitude2])) {
+    //    map.getView().setZoom(map.getView().getZoom() - 1);
+    //  extent = map.getView().calculateExtent(map.getSize());
 }
 
 function computePath() {
@@ -29,13 +38,17 @@ function computePath() {
     //  get the destination
     var destination = document.getElementById('destination').value;
 
+    if(location == "" || destination == ""){
+        setTimeout(
+            () => document.getElementById("instructions").textContent = "Please fill both start and end destination fields",
+            100);
+        return;
+    }
+
     console.log('The current location is : ' + location + ' and the destination is : ' + destination);
 
-    //TODO : change the latitude and longitude to the real ones
-    CenterMap(12.9, 55.7);
-
     // get the router server targetUrl
-    var targetUrl = "http://localhost:8733/Design_Time_Addresses/RoutingService/Service1/itinerary?location="
+    var targetUrl = "http://localhost:8733/Design_Time_Addresses/RoutingService/Service1/rest/ComputePath?location="
         + location + "&destination=" + destination;
     var requestType = "GET";
 
@@ -46,12 +59,84 @@ function computePath() {
     caller.setRequestHeader("Accept", 'application/json; charset=utf-8');
     // onload shall contain the function that will be called when the call is finished.
     caller.onload = showTripPath;
+    caller.responseType = 'json';
     caller.send();
 }
+
+let layers = [];
 
 /**
  * Drawing the path on the map.
  */
 function showTripPath() {
     console.log('Computing the trip');
+    while(layers.length) {
+        map.removeLayer(layers.pop())
+    }
+    if (this.status !== 200) {
+        console.log("Contracts not retrieved. Check the error in the Network or Console tab.");
+    } else {
+        const responseObject = this.response;
+        console.log(responseObject);
+
+        if (responseObject['hasError'] === 'true') {
+            document.getElementById("instruct").textContent = responseObject['message'];
+            return;
+        }
+        posInitialex = responseObject['routes'][0]['geometry']['coordinates'][0][0];
+        posInitialey = responseObject['routes'][0]['geometry']['coordinates'][0][1];
+        
+        for (let i = 0; i < responseObject['routes'].length; i++) {
+            let color = i % 2 === 0 ? '#ff6c02' : '#ffb400'
+            let coords = responseObject['routes'][i]['geometry']['coordinates'];
+            let lineString = new ol.geom.LineString(coords);
+            
+            //posFinalex = coords[0][0]; 
+            //posFinaley = coords[1][1];
+
+            lineString.transform('EPSG:4326', 'EPSG:3857');
+
+            let feature = new ol.Feature({
+                geometry: lineString,
+                name: 'Line'
+            });
+
+            let lineStyle = new ol.style.Style({
+                stroke: new ol.style.Stroke({
+                    color: color,
+                    width: 3
+                })
+            });
+
+            let source = new ol.source.Vector({
+                features: [feature]
+            });
+
+            let vector = new ol.layer.Vector({
+                source: source,
+                style: [lineStyle]
+            });
+
+            layers.push(vector);
+            map.addLayer(vector);
+        }
+        CenterMap(posInitialex, posInitialey);
+        showInstructions(responseObject);
+    }
+}
+
+function showInstructions(responseObject) {
+    let steps = "";
+    for (let i = 0; i < responseObject['routes'].length; i++) {
+        let instructions = responseObject['routes'][i]['properties']['segments'][0]['steps']
+        for (let j = 0; j < instructions.length; j++) {
+            steps += "- " + instructions[j]['instruction'] + "\n";
+        }
+    }
+    console.log(steps);
+    let paragraph = document.getElementById("instruct");
+    // Replace the content of the span with the new text content of steps
+    paragraph.textContent = steps;
+    paragraph.setAttribute('style', 'white-space: pre-line;');
+
 }

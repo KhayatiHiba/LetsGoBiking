@@ -1,0 +1,13 @@
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\obj\Debug\RoutingService.csproj.AssemblyReference.cache
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\obj\Debug\RoutingService.csproj.CoreCompileInputs.cache
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\bin\Debug\RoutingService.exe.config
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\bin\Debug\RoutingService.exe
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\bin\Debug\RoutingService.pdb
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\bin\Debug\System.Device.Portable.dll
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\obj\Debug\RoutingService.csproj.SuggestedBindingRedirects.cache
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\obj\Debug\XsdGeneratedCode\GeneratedXsdTypes.cs
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\obj\Debug\RoutingService.csproj.CopyComplete
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\obj\Debug\RoutingService.exe
+C:\Users\Hiba Khayati\Documents\Study\02-SecondYear\PS8\08- SOC\TDS\LetsGoBiking\LetsGoBiking\RoutingService\obj\Debug\RoutingService.pdb

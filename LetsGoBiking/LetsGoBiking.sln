@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeavyClient", "HeavyClient\HeavyClient.csproj", "{9A5578E0-B391-48A1-B108-B7D0C484BAD7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingService", "RoutingService\RoutingService.csproj", "{082AC97D-6C3D-48F9-B2CB-5AACD31887DE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EFF79D73-142B-4288-AFA7-ADF59656E2F6} = {EFF79D73-142B-4288-AFA7-ADF59656E2F6}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProxyCacheService", "ProxyCacheService\ProxyCacheService.csproj", "{EFF79D73-142B-4288-AFA7-ADF59656E2F6}"
 EndProject

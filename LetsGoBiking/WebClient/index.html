@@ -32,14 +32,15 @@
                         <input id="destination" type="text" required="required">
                         <span>Destination</span>
                     </div>
-                    <div class="inputbox">
-                        <input type="button" value="submit" onclick="savePath();">
+                    <div class="inputbox" id="button">
+                        <input type="button" value="submit" onclick="computePath();">
                     </div>
                 </form>
                 <div class="instructions">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur
-                        tempor, nisl nunc ultrices eros, eu porttitor nisl nunc eget purus.
+                        <span id="titleInstruct">Instructions:</span>
+                        <br>
+                        <div id="instruct"></div>
                     </p>
                 </div>
             </div>

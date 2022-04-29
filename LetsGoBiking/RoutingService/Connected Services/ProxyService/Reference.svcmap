@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="42e40443-3c30-4a81-ba32-5fa0bb48ffdd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/ProxyCacheService/ProxyService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="70e1324b-c30e-4b6a-b0d7-d22ddebfa34d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ProxyCacheService/ProxyService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="bd44382d-7025-48bf-99b1-02c114399dd2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ProxyCacheService/ProxyService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="a1168150-b746-4c2b-a27c-c2eaf6fc95ca" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ProxyCacheService/ProxyService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
